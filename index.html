@@ -9,15 +9,23 @@
     <link rel="stylesheet" href="style.css">
   </head>
 
-  <body>
-    <header>
+  <body class="grid-wrapper">
+    <header style="grid-area: header">
       <h1>Webseite über Luc Jeandupeux</h1>
     </header>
 
-    <main>
+    <nav style="grid-area: nav">
+      <ul>
+        <li>
+          <a href="#Über mich">Über mich</a>
+          <a href="Familie">Familie</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main style="grid-area: main">
       <section>
-        <h2>Dies ist ein erster Abschnitt</h2>
-        Abschnitte haben immer einen Titel und dann den Text.
+        <h2>Über mich</h2>
       </section>
 
       <section>
@@ -36,6 +44,6 @@
       </section>
     </main>
 
-    <footer>Meine Webseite</footer>
+    <footer style="grid-area: footer">Meine Webseite</footer>
   </body>
 </html>

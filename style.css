@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header,
+main,
+footer {
+  border: 1px solid black;
+}
+
+h1 {
+  text-align: center;
+}
+
+main {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+footer {
+  padding: 2rem;
+}
+
+section {
+  margin: 0;
+  min-height: calc(100vh - 82px - 21px);
+  background-color: lightgray;
+  padding: 1rem;
+}
+
+section:nth-child(2n) {
+  background-color: hsl(from lightgray h s calc(l - 5));
+}
+
+.grid-wrapper {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header"
+    "nav main"
+    "footer footer";
+}
+
+.flex-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: normal;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+}
+
+.flex-wrapper > div {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+}
