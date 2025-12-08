@@ -40,7 +40,7 @@ section:nth-child(2n) {
   grid-template-rows: auto 1fr auto;
   grid-template-areas:
     "header header"
-    "nav main"
+    "aside main"
     "footer footer";
 }
 
@@ -57,4 +57,27 @@ section:nth-child(2n) {
   flex-grow: 0;
   flex-shrink: 1;
   flex-basis: auto;
+}
+aside > nav > ul {
+  /* Navigations-Liste */
+  border: 1px solid orange;
+  list-style: none;
+  padding: 0;
+}
+
+aside > nav > ul > li {
+  /* Eintrag in Navigationsliste */
+  border: 1px solid red;
+  margin: 0;
+}
+
+aside > nav > ul > li > a {
+  /* Link in Navigationsliste */
+  border: 1px solid blue;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-decoration: none;
+  color: black;
 }
