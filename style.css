@@ -61,20 +61,20 @@ section:nth-child(2n) {
 }
 aside > nav > ul {
   /* Navigations-Liste */
-  border: 1px solid orange;
+  border: 1px solid black;
   list-style: none;
   padding: 0;
 }
 
 aside > nav > ul > li {
   /* Eintrag in Navigationsliste */
-  border: 1px solid red;
+  border: 1px solid black;
   margin: 0;
 }
 
 aside > nav > ul > li > a {
   /* Link in Navigationsliste */
-  border: 1px solid blue;
+  border: 0px solid black;
   width: 100%;
   display: flex;
   justify-content: flex-start;
