@@ -6,7 +6,7 @@ body {
 header,
 main,
 footer {
-  border: 1px solid black;
+  border: 1px solid lightgray;
 }
 
 h1 {
