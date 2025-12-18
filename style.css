@@ -82,3 +82,16 @@ aside > nav > ul > li > a {
   text-decoration: none;
   color: black;
 }
+
+.color-list {
+  list-style: none;
+  padding: 0;
+}
+
+.color-list > li {
+  border: 1px dashed red;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1em;
+}
