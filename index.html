@@ -7,6 +7,7 @@
     <title>Eigene Webseite Luc Jeandupeux</title>
 
     <link rel="stylesheet" href="style.css">
+    <script src="./main.js" defer></script>
   </head>
 
   <body class="grid-wrapper">
@@ -127,13 +128,13 @@
           Basis nach belieben wählen.
         </p>
         <ul class="color-list">
-          <li>
+          <li class="svg-red" onclick="changeColor('red')">
             <svg viewBox="0 0 10 10" width="1em">
               <rect x="0" y="0" width="10" height="10"/>
             </svg>
             <span>Rot</span>
           </li>
-          <li>
+          <li class="svg-green" onclick="changeColor('green')">
             <svg viewBox="0 0 10 10" width="1em">
               <rect x="0" y="0" width="10" height="10"/>
             </svg>

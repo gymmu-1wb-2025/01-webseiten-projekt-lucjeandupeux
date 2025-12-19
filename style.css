@@ -1,3 +1,7 @@
+:root {
+  --section-color: lightgray;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -26,12 +30,12 @@ footer {
 section {
   margin: 0;
   min-height: calc(100vh - 82px - 21px);
-  background-color: lightgray;
+  background-color: var(--section-color);
   padding: 1rem;
 }
 
 section:nth-child(2n) {
-  background-color: hsl(from lightgray h s calc(l - 5));
+  background-color: hsl(from var(--section-color) h s calc(l - 5));
 }
 
 .grid-wrapper {
@@ -86,6 +90,9 @@ aside > nav > ul > li > a {
 .color-list {
   list-style: none;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
 }
 
 .color-list > li {
@@ -94,4 +101,13 @@ aside > nav > ul > li > a {
   flex-direction: row;
   align-items: center;
   gap: 1em;
+  cursor: pointer;
+}
+
+.svg-red rect {
+  fill: red;
+}
+
+.svg-green rect {
+  fill: green;
 }
