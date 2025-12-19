@@ -132,3 +132,8 @@ aside > nav > ul > li > a {
   stroke: black;
   fill: beige;
 }
+
+fieldset {
+  max-width: 2%;
+  align-items: center;
+}
