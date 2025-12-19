@@ -1,0 +1,236 @@
+:root {
+  /* Zentrale CSS-Variable für die Abschnittsfarbe */
+  --section-color: lightgray;
+}
+
+body {
+  /* Grundlegende Schriftart und Entfernen von Standardabständen */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header,
+main,
+footer {
+  /* Rahmen für die Hauptbereiche */
+  border: 1px solid lightgray;
+}
+
+h1 {
+  /* Zentriert die Hauptüberschrift */
+  text-align: center;
+}
+
+main {
+  /* Scrollen nur vertikal erlauben */
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+footer {
+  /* Innenabstand im Footer */
+  padding: 2rem;
+}
+
+section {
+  /* Grundlayout für alle Sections */
+  margin: 0;
+  min-height: calc(100vh - 82px - 21px);
+  background-color: var(--section-color);
+  padding: 1rem;
+}
+
+section:nth-child(2n) {
+  /* Etwas dunklere Farbe für jeden zweiten Abschnitt */
+  background-color: hsl(from var(--section-color) h s calc(l - 5));
+}
+
+.grid-wrapper {
+  /* Hauptseitenlayout mit CSS Grid */
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header"
+    "aside main"
+    "footer footer";
+}
+
+.flex-wrapper {
+  /* Flexbox-Layout für horizontale Anordnung */
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.flex-wrapper > div {
+  /* Flex-Einstellungen für Kindelemente */
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+}
+
+aside > nav > ul {
+  /* Navigationsliste ohne Aufzählungszeichen */
+  border: 1px solid black;
+  list-style: none;
+  padding: 0;
+}
+
+aside > nav > ul > li {
+  /* Rahmen für Navigationseinträge */
+  border: 1px solid black;
+}
+
+aside > nav > ul > li > a {
+  /* Layout und Stil der Navigationslinks */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+}
+
+.color-list {
+  /* Liste für Farbauswahl */
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.color-list > li {
+  /* Klickbare Farbeinträge */
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  cursor: pointer;
+}
+
+.svg-red rect {
+  /* Rote Farbe */
+  stroke: black;
+  fill: red;
+}
+
+.svg-green rect {
+  /* Grüne Farbe */
+  stroke: black;
+  fill: green;
+}
+
+.svg-reset rect {
+  /* Standardfarbe */
+  stroke: black;
+  fill: lightgray;
+}
+
+.svg-blue rect {
+  /* Blaue Farbe */
+  stroke: black;
+  fill: blue;
+}
+
+.svg-yellow rect {
+  /* Gelbe Farbe */
+  stroke: black;
+  fill: yellow;
+}
+
+.svg-beige rect {
+  /* Beige Farbe */
+  stroke: black;
+  fill: beige;
+}
+
+fieldset {
+  /* Zentrierter Timer ohne Rahmen */
+  margin: 0 auto;
+  text-align: center;
+  width: fit-content;
+  border: none;
+}
+
+.subpage-layout {
+  /* Layout für Unterseiten */
+  display: grid;
+  min-height: 100vh;
+  gap: 20px;
+  background-color: #f0f0f0;
+}
+
+.subpage-layout header {
+  /* Kopfbereich der Unterseite */
+  background-color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.subpage-layout header a {
+  /* Zurück-Link links im Header */
+  position: absolute;
+  left: 1rem;
+}
+
+.subpage-layout main {
+  /* Hauptinhalt der Unterseite */
+  width: 80%;
+  margin: 0 auto;
+  background-color: white;
+  padding: 2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.subpage-layout footer {
+  /* Footer der Unterseite */
+  text-align: center;
+  padding: 1rem;
+  background-color: lightgray;
+}
+
+@media (max-width: 768px) {
+  /* Anpassungen für kleinere Bildschirme */
+  .grid-wrapper {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "aside"
+      "main"
+      "footer";
+    height: auto;
+  }
+
+  aside > nav > ul {
+    /* Navigation nebeneinander auf Mobilgeräten */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  aside > nav > ul > li {
+    /* Flexible Navigationspunkte */
+    flex: 1 1 auto;
+  }
+}
+
+.training-images {
+  /* Grid für Trainingsbilder */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.training-images img {
+  /* Darstellung der Bilder */
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}

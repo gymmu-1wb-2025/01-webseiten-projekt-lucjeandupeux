@@ -4,38 +4,351 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eigene Webseite</title>
 
+    <!-- Titel der Webseite im Browser-Tab -->
+    <title>Eigene Webseite Luc Jeandupeux</title>
+
+    <!-- Verknüpft die externe CSS-Datei -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Bindet die JavaScript-Datei ein (wird nach dem HTML geladen) -->
+    <script src="./main.js" defer></script>
   </head>
 
-  <body>
-    <header>
-      <h1>Webseite von ...</h1>
+  <!-- Beginn des sichtbaren Seiteninhalts -->
+  <body class="grid-wrapper">
+    <!-- Body verwendet ein Grid-Layout aus der CSS-Datei -->
+
+    <!-- Kopfbereich der Webseite -->
+    <header style="grid-area: header">
+      <!-- Hauptüberschrift der Seite -->
+      <h1>Webseite von Luc Jeandupeux</h1>
+
+      <!-- Feld für einen Timer, der per JavaScript gefüllt wird -->
+      <fieldset id="timer"></fieldset>
     </header>
 
-    <main>
-      <section>
-        <h2>Dies ist ein erster Abschnitt</h2>
-        Abschnitte haben immer einen Titel und dann den Text.
-      </section>
+    <!-- Seitenbereich für die Navigation -->
+    <aside>
+      <nav>
+        <ul>
+          <!-- Navigationseintrag zur Startseite -->
+          <li>
+            <a href="#Startseite">
+              <!-- SVG-Icon für die Startseite -->
+              <svg viewbox="0 0 100 100" width="48px">
+                <circle cx="50" cy="30" r="22" fill="black"/>
+                <circle cx="29" cy="68" r="22" fill="black"/>
+                <circle cx="71" cy="68" r="22" fill="black"/>
+              </svg>
+              Startseite
+            </a>
+          </li>
 
-      <section>
-        <h2>Das p-Tag</h2>
-        <p>Der Text sollte immer in ein p gepackt werden.</p>
-        <p>Mit dem p ist es auch möglich einen Zeilenumbruch zu haben.</p>
-      </section>
+          <!-- Navigationseintrag zum Abschnitt "Über mich" -->
+          <li>
+            <a href="#Über mich">
+              <!-- SVG-Icon einer Person -->
+              <svg viewBox="0 0 100 100" width="48px">
+                <circle
+                  cx="50"
+                  cy="20"
+                  r="12"
+                  stroke="black"
+                  fill="none"
+                  stroke-width="4"
+                />
+                <!-- Körper, Arme und Beine -->
+                <path d="M50 32 L50 65" stroke="black" stroke-width="4"/>
+                <path d="M30 45 L70 45" stroke="black" stroke-width="4"/>
+                <path d="M50 65 L35 90" stroke="black" stroke-width="4"/>
+                <path d="M50 65 L65 90" stroke="black" stroke-width="4"/>
+              </svg>
+              Über mich
+            </a>
+          </li>
 
-      <section>
-        <h2>Unterseiten verlinken</h2>
+          <!-- Navigationseintrag zum Abschnitt "Hobbys" -->
+          <li>
+            <a href="#Hobbys">
+              <!-- SVG-Icon für Hobbys -->
+              <svg viewBox="0 0 100 100" width="48px">
+                <rect x="24" y="35" width="10" height="30" rx="2"/>
+                <rect x="35" y="45" width="30" height="10" rx="2"/>
+                <rect x="67" y="35" width="10" height="30" rx="2"/>
+              </svg>
+              Hobbys
+            </a>
+          </li>
+
+          <!-- Navigationseintrag zum Abschnitt "Familie" -->
+          <li>
+            <a href="#Familie">
+              <!-- SVG-Icon eines Hauses -->
+              <svg viewBox="0 0 100 100" width="48px">
+                <path
+                  d="M10 40 L50 10 L90 40 Z"
+                  stroke="black"
+                  stroke-width="3"
+                  fill="none"
+                />
+                <rect
+                  x="20"
+                  y="40"
+                  width="60"
+                  height="42"
+                  rx="3"
+                  stroke="black"
+                  stroke-width="3"
+                  fill="none"
+                />
+              </svg>
+              Familie
+            </a>
+          </li>
+
+          <!-- Navigationseintrag zum Abschnitt "Werdegang" -->
+          <li>
+            <a href="#Werdegang">
+              <!-- SVG-Icon als Symbol für Entwicklung -->
+              <svg viewbox="0 0 100 100" width="48px">
+                <polygon points="10,80 50,20 90,80" fill="black"/>
+              </svg>
+              Werdegang
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Hauptinhalt der Webseite -->
+    <main style="grid-area: main">
+      <!-- Abschnitt: Startseite -->
+      <section id="Startseite">
+        <h2>Startseite</h2>
+
+        <!-- Begrüssungstext -->
         <p>
-          Wir können auch weitere Webseiten verknüpfen, dafür müssen wir nur
-          einen Link angeben, wie zum Beispiel zu den
-          <a href="./unterseiten/hobbies.html">Hobbies</a>.
+          Willkommen auf meiner persönlichen Webseite. Hier finden Sie
+          Informationen zu meiner Person, meinen Hobbys, zur meiner Familie und
+          über meinen Werdegang.
+        </p>
+
+        <!-- Überschrift für die Farbauswahl -->
+        <h3>Farbe Anpassen</h3>
+
+        <!-- Erklärung zur Farbauswahl -->
+        <p>
+          Zu Beginn meiner Webseite können Sie verschiedenste Farben, als Basis
+          nach belieben wählen.
+        </p>
+
+        <!-- Liste mit auswählbaren Farben -->
+        <ul class="color-list">
+          <!-- Jede Farbe ruft eine JavaScript-Funktion auf -->
+          <li class="svg-red" onclick="changeColor('red')">
+            <svg viewBox="0 0 10 10" width="1em">
+              <rect x="0" y="0" width="10" height="10"/>
+            </svg>
+            <span>Rot</span>
+          </li>
+
+          <li class="svg-green" onclick="changeColor('green')">
+            <svg viewBox="0 0 10 10" width="1em">
+              <rect x="0" y="0" width="10" height="10"/>
+            </svg>
+            <span>Grün</span>
+          </li>
+
+          <li class="svg-blue" onclick="changeColor('blue')">
+            <svg viewBox="0 0 10 10" width="1em">
+              <rect x="0" y="0" width="10" height="10"/>
+            </svg>
+            <span>Blau</span>
+          </li>
+
+          <li class="svg-yellow" onclick="changeColor('yellow')">
+            <svg viewBox="0 0 10 10" width="1em">
+              <rect x="0" y="0" width="10" height="10"/>
+            </svg>
+            <span>Gelb</span>
+          </li>
+
+          <li class="svg-beige" onclick="changeColor('beige')">
+            <svg viewBox="0 0 10 10" width="1em">
+              <rect x="0" y="0" width="10" height="10"/>
+            </svg>
+            <span>Beige</span>
+          </li>
+
+          <!-- Setzt die Farbe auf den Standard zurück -->
+          <li class="svg-reset" onclick="changeColor('lightgray')">
+            <svg viewBox="0 0 10 10" width="1em">
+              <rect x="0" y="0" width="10" height="10"/>
+            </svg>
+            <span>Reset</span>
+          </li>
+        </ul>
+      </section>
+      <!-- Weitere Abschnitte: Über mich, Hobbys, Familie und Werdegang -->
+      <!-- Diese bestehen aus Überschriften und Text -->
+      <section id="Über mich">
+        <h2>Über mich</h2>
+        <p>
+          Mein Name ist Luc Jeandupeux und ich bin 16 Jahre alt. Ich lebe in der
+          Schweiz, im Kanton Baselland, in der Gemeinde Muttenz und möchte hier
+          einen übersichtlichen Einblick in meine Person geben.
+        </p>
+        <p>
+          Zurzeit bin ich Schüler am Gymnasium in Muttenz. Als Schwerpunkt habe
+          ich Wirtschaft und Recht gewählt, woran ich vor allem mag, dass ich
+          hilfreiche Sachen fürs Leben lerne. Ich finde es spannend mich
+          weiterzuentwickeln, Neues zu lernen und meine Fähigkeiten Schritt für
+          Schritt zu verbessern.
+        </p>
+        <p>
+          Als Person würde ich mich als zuverlässig, offen und zielstrebig
+          beschreiben. Mir ist es immer wichtig Dinge sorgfältig anzugehen,
+          verantwortungsvoll zu sein und stets offen für neue Erfahrungen zu
+          bleiben. In meinem Alltag versuche ich, eine gute Balance zwischen
+          Schule, Sport und Freunde und Familie zu finden.
+        </p>
+        <p>
+          In meiner Freizeit beschäftige ich mich gerne auf verschiedenste wege
+          und verbringe viel Zeit mit meiner Familie dazu, aber jeweils einem
+          der nächsten Abschnitte mehr.
+        </p>
+        <p>
+          In dieses Schulprojekt, eine eigene Webseite zu erstellen möchte ich
+          vor allem einen Überblick über mich geben. Wenn du mehr über mich
+          erfahren möchtest, finden Sie in den folgenden Abschnitten weitere
+          Informationen über meinen Alltag und anderen Bereichen, welche mich
+          beschäftigen.
+        </p>
+        <p>Vielen Dank fürs Vorbeischauen!</p>
+      </section>
+
+      <section id="Hobbys">
+        <h2>Hobbys</h2>
+        <p>
+          In meiner Freizeit beschäftige ich mich mit verschiedenen Aktivitäten,
+          die mir Ausgleich zum Alltag bieten und mir die Möglichkeit geben,
+          meinen Interessen nachzugehen. Meine Hobbys spielen dabei eine
+          wichtige Rolle, da sie mir helfen, abzuschalten, neue Fähigkeiten zu
+          entwickeln und mich persönlich weiterzuentwickeln.
+        </p>
+        <p>
+          Zu meinen wichtigsten Hobbys zählen Krafttraining, Fussball spielen
+          und Videospiele. Jedes dieser Hobbys hat für mich einen eigenen
+          Stellenwert. Besonders das
+          <a href="./unterseiten/krafttraining.html">Krafttraining</a>, welches
+          mir am wichtigsten ist, begleitet mich zwar nur seit knapp eineinhalb
+          Jahren, hat mich jedoch durch eine Zeit begleitet, in der es mir nicht
+          so gut ging und bereitet mir bis heute grosse Freude.
+        </p>
+        <p>
+          Am Fussball spielen, schätze ich vor allem die Bewegung durchs viele
+          Rennen. Ich spiele jetzt zwar seit zwei Jahren nicht mehr im Verein,
+          treffe mich aber dennoch immer wieder mit meinen Freunden auf dem
+          Platz.Videospiele bieten mir dagegen einen guten Ausgleich, da ich
+          beim Spielen komplett entspannen und mich und meinen Körper einfach
+          mal ausruhen kann.
+        </p>
+        <p>
+          Ein wichtiger Aspekt meiner Freizeitgestaltung ist auch, dass ich
+          meine Hobbys entweder alleine, mit Freunden oder in der Familie
+          ausübe. Dabei schätze ich besonders die geimeinsame Zeit, die dadurch
+          entsteht.
+        </p>
+        <p>
+          Insgesamt tragen meine Hobbys dazu bei, meinen Alltag
+          abwechslungsreich zu gestalten und dem Schulstress zu entkommen. Sie
+          helfen mir, motiviert zu bleiben, Interessen zu vertiefen und mich
+          auch ausserhalb der Schule weiterzuentwickeln.
+        </p>
+      </section>
+
+      <section id="Familie">
+        <h2>Familie</h2>
+        <p>
+          Die Familie ist ein wichtiger Bestandteil meines Lebens und spielt
+          eine bedeutende Rolle in meinem Alltag. Sie bietet mir Halt,
+          Unterstützung und Freude. Auch wenn jeder seinen eigenen Interessen
+          und Verpflichtungen nachgeht, ist ein respektvolles und gutes
+          Miteinander für mich sehr wichtig.
+        </p>
+        <p>
+          Ich bin Einzelkind und lebe mit meinen Eltern in Muttenz. Zu meiner
+          Familie gehören meine Mutter, mein Vater und ich. Der familiäre
+          Zusammenhalt und gegenseitige Unterstützung haben dabei einen hohen
+          Stellenwert.
+        </p>
+        <p>
+          Gemeinsame Zeit, zum Beispiel Gespräche, Unternehmungen, gemeinsame
+          Mahlzeiten, sind bei uns tief verankert und ist auch mir besonders
+          wichtig. Sie trägt dazu bei, den Alltag auszugleichen und das
+          Miteinander zu stärken. Auch wenn nicht immer viel Zeit bleibt,
+          schätzen wir alle diese Momente sehr.
+        </p>
+        <p>
+          Meine Familie gibt mir Rückhalt und Sicherheit. Sie begleitet mich in
+          verschiedenen Lebenssituationen und unterstützt mich dabei, meinen
+          eigenen Weg zu gehen, egal wie dieser aussieht.
+        </p>
+      </section>
+
+      <section id="Werdegang">
+        <h2>Werdegang</h2>
+        <p>
+          Mein bisheriger Werdegang ist geprägt von verschiedenen Lern- und
+          Entwicklungsphasen, die mich sowohl fachlich als auch persönlich
+          begleitet haben. Im Laufe der Zeit konnte ich unterschiedliche
+          Erfahrungen sammeln, Interessen vertiefen und mich schrittweise
+          weiterentwickeln.
+        </p>
+        <p>
+          Meine schulische Laufbahn begann im Jahre 2014 mit dem Eintritt in den
+          Kindergarten. Danach ging es 2016 in die Primarstufe, wo ich
+          grundlegende Kenntnisse und Fähigkeiten erworben habe, die die Basis
+          für meinen weiteren Bildungsweg gebildet haben. Bereits in dieser Zeit
+          entwickelten sich erste Interessen, insbesondere im Bereich Sport,
+          Mathe und Natur, Mensch, Gesellschaft.
+        </p>
+        <p>
+          Im weiteren Verlauf besuchte ich die Sekundarschule Hinterzweien in
+          Muttenz, an der ich mich intensiver mit unterschiedlichen
+          Fachrichtungen auseinandersetzen konnte. Während dieser Phase lernte
+          ich, selbstständiger zu arbeiten, Verantwortung zu übernehmen und
+          meine Stärken besser einzuschätzen. Besonders das selbstorientierte
+          Lernen hat mich in dieser Zeit geprägt und meinen weiteren Weg
+          beeinflusst.
+        </p>
+        <p>
+          Derzeit bin ich Schüler am Gymnasium Muttenz. In diesem Abschnitt
+          meines Werdegangs steht vor allem die Vertiefung von Wissen sowie die
+          Weiterentwicklung praktischer und theoretischer Fähigkeiten im
+          Vordergrund. Dabei ist es mir wichtig, strukturiert zu arbeiten und
+          neue Herausforderungen anzunehmen.
+        </p>
+        <p>
+          Neben der fachlichen Entwicklung spielt auch die persönliche
+          Weiterentwicklung eine große Rolle. In der Schule, vor allem durch
+          Projekte oder Gruppen-und Partnerarbeiten konnte ich Eigenschaften wie
+          Zuverlässigkeit, Selbstständigkeit und Teamfähigkeit weiter ausbauen.
+          Diese Erfahrungen haben meinen bisherigen Werdegang massgeblich
+          geprägt.
+        </p>
+        <p>
+          Mit Blick auf die Zukunft möchte ich meinen Weg konsequent
+          weiterverfolgen und meine Kenntnisse in vielen Bereichen, wie zum
+          Besipsiel Wirtschaft und Recht weiter vertiefen. Mein bisheriger
+          Werdegang bildet dafür eine solide Grundlage und hilft mir, neue
+          Schritte bewusst und reflektiert zu gehen.
         </p>
       </section>
     </main>
 
-    <footer>Meine Webseite</footer>
+    <!-- Fusszeile der Webseite -->
+    <footer style="grid-area: footer">© 2025 Luc Jeandupeux</footer>
   </body>
 </html>
