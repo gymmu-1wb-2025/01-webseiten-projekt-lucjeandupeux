@@ -1,3 +1,4 @@
+// Haben Sie in Ihrem Video zum Auftrag erklärt
 function changeColor(color) {
   document.documentElement.style.setProperty("--section-color", color);
 }
